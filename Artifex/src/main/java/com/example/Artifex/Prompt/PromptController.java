@@ -1,10 +1,7 @@
 package com.example.Artifex.Prompt;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,6 +16,10 @@ public class PromptController {
         this.promptService = promptService;
     }
 
+    @GetMapping
+    public String message(){
+        return "API is up and running";
+    }
 
     @PostMapping
     public List<String> getImage(@RequestBody Prompt prompt) {
